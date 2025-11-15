@@ -8,7 +8,6 @@ def getInput():
 		userInput = int(input("Enter the length of password to be generated (8 and up): "))
 		if (userInput < 8):
 			print("password length too small, please enter a number bigger than 7\n")
-			userInput = -1
 			return -1
 		else:
 			return userInput
