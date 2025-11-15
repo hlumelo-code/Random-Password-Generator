@@ -5,13 +5,12 @@ import random
 def getInput():
 
 	try:
-		userInput = input("Please enter the length of your password\n")
-		return int(userInput)
-		
+		userInput = int(input("Enter the length of password to be generated: "))
+		return userInput
 	except ValueError:
-		print("Invalid input")
+		print("Invalid input.")
+		return -1
 		
-
 def pwgen(userInput): # this function will generate the string with random characters.
 
 	chars = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890"
@@ -26,8 +25,10 @@ def pwgen(userInput): # this function will generate the string with random chara
 def main():
 
 	userInput = getInput()
-
-	print("Your generated password is",pwgen(userInput))
+	if userInput == -1:
+		main()
+	else:
+		print("Your generated password is",pwgen(userInput))
 
 if __name__ == '__main__':
 	main()
