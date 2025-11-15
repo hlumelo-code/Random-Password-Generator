@@ -5,9 +5,9 @@ import random
 def getInput():
 
 	try:
-		userInput = int(input("Enter the length of password to be generated (8 and up): "))
-		if (userInput < 8):
-			print("password length too small, please enter a number bigger than 7\n")
+		userInput = int(input("Enter the length of password to be generated (between 8 and 15): "))
+		if (userInput < 8 or userInput > 15):
+			print("please enter a length between 7 and 15\n")
 			return -1
 		else:
 			return userInput
