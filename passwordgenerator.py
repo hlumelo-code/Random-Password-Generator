@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import random
+import string
 
 def getInput():
 
@@ -17,12 +18,11 @@ def getInput():
 		
 def pwgen(userInput): # this function will generate the string with random characters.
 
-	chars = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890"
+	chars = string.ascii_lowercase + string.ascii_uppercase + string.digits
 	i = 0
 	word = ""
 	while i < userInput:
-		pos = random.randint(0,61)
-		word = word + chars[pos]
+		word = word + random.choice(chars)
 		i = i + 1
 	return word
 
