@@ -26,16 +26,13 @@ def pwgen(userInput): # this function will generate the string with random chara
 		i = i + 1
 	return word
 
-def main():
+def passwordgenerator():
 
 	try:
 		userInput = getInput()
 		if userInput == -1:
-			main()
+			passwordgenerator()
 		else:
 			print("Your generated password is",pwgen(userInput))
 	except KeyboardInterrupt:
 		print("\nYou exited the program before the password was generated. Try again.")
-
-if __name__ == '__main__':
-	main()
