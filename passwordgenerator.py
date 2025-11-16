@@ -15,6 +15,12 @@ def getInput():
 	except ValueError:
 		print("Invalid input.")
 		return -1
+
+def evalCreated(typed): # this function will evaluate the manually created password length.
+
+	if len(typed) >= 8 and len(typed) <= 15:
+		return True 
+	return False
 		
 def pwgen(userInput): # this function will generate the string with random characters.
 
@@ -26,13 +32,14 @@ def pwgen(userInput): # this function will generate the string with random chara
 		i = i + 1
 	return word
 
-def passwordgenerator():
+def start():
 
 	try:
 		userInput = getInput()
 		if userInput == -1:
-			passwordgenerator()
+			return "none"
 		else:
-			print("Your generated password is",pwgen(userInput))
+			return pwgen(userInput)
 	except KeyboardInterrupt:
 		print("\nYou exited the program before the password was generated. Try again.")
+		return "none"
